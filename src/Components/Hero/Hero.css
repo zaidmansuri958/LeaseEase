@@ -1,0 +1,50 @@
+.hero{
+    height: 100vh;
+    background:linear-gradient(180deg,#ffffff,bisque 60%);
+    display: flex;
+}
+
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 20px;
+    padding-left: 60px;
+    line-height: 1.2;
+    word-spacing: 5px;
+}
+.hero-left h1{
+    font-size: 48px;
+    color: rgb(194, 12, 12);
+    margin-top: -80px;
+}
+.hero-left h3{
+    font-size: 18px;
+    color: rgb(240, 71, 71);
+    font-weight: lighter;
+    margin-top: -10px;
+}
+.hero-left button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color:rgb(243, 30, 30);
+    width: 60%;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px black;
+    cursor: pointer;
+}
+.hero-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin-left: 80px;
+}
+.hero-right img{
+    height: 100vh;
+    width: 800px;
+}
+
