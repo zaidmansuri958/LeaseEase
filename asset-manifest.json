@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/LeaseEase/static/css/main.f40a5570.css",
+    "main.js": "/LeaseEase/static/js/main.e47156bc.js",
+    "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
+    "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
+    "static/media/property.jpg": "/LeaseEase/static/media/property.95eb9438596597ead6cb.jpg",
+    "static/media/avatar.png": "/LeaseEase/static/media/avatar.6450dbb16a273d174440.png",
+    "index.html": "/LeaseEase/index.html",
+    "main.f40a5570.css.map": "/LeaseEase/static/css/main.f40a5570.css.map",
+    "main.e47156bc.js.map": "/LeaseEase/static/js/main.e47156bc.js.map",
+    "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f40a5570.css",
+    "static/js/main.e47156bc.js"
+  ]
+}
