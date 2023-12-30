@@ -4,6 +4,8 @@ import "./Navbar.css";
 
 export const Navbar = () => {
     const [menu,setMenu]=useState("home");
+    const tenant={user:'Tenant'}
+    const landlord={user:'Landlord'}
   return (
     <div className="navbar">
     <h1>LeaseEase.</h1>
@@ -13,7 +15,8 @@ export const Navbar = () => {
         <li onClick={()=>{setMenu("contact")}}><Link style={{textDecoration:'none',color:'black'}} to='/contact'>Contact</Link>{menu==="contact"?<hr/>:<></>}</li>
       </ul>
       <div className="register">
-      <Link to='/loginsignup'><button>Register</button></Link>
+      <Link to='/tenant-registration'><button className="tenant-btn">Become Tenant</button></Link>
+      <Link to='/landlord-registration'><button className="landlord-btn">Become Landlord</button></Link>
       </div>
     </div>
   );

@@ -41,6 +41,7 @@
   cursor: pointer;
   color: var(--grey-color);
   margin-top: 10px;
+  font-weight: 400;
 }
 .hero-left button:hover{
   background-color: blue;
