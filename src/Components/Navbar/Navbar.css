@@ -1,33 +1,42 @@
+:root {
+    --main-bg-color: #513DFE;
+    --grey-color:#e7e5eb;
+  }
 .navbar{
     display: flex;
     justify-content: space-around;
-    padding: 4px;
     box-shadow: 0 1px 3px -2px black ;
-    background-color: rgb(231, 60, 60);
+    background-color: var(--grey-color);
     align-items: center;
+}
+.navbar h1{
+    font-size: 48px;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.377);
 }
 .nav-menu{
     display: flex;
     list-style: none;
     align-items: center;
     gap: 50px;
-    color: white;
+    color: black;
     font-size: 18px;    
-    margin-left: 720px;
+    margin-left: 420px;
 }
 .nav-menu li{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
     cursor: pointer;
-    color: whitesmoke;
+    color: black;
+    margin-top: 10px;
 }
 .register button{
     padding: 10px 20px;
     background-color: white;
-    color: red;
+    color: var(--main-bg-color);
     border: none;
     border-radius: 12px;
     font-size: 18px;
@@ -36,10 +45,15 @@
     cursor: pointer;
     font-family: 'poppins';
 }
+.register button:hover{
+    background-color: var(--main-bg-color);
+    color: var(--grey-color);
+    transition: 1.2s;
+}
 .nav-menu hr{
     border: none;
     width: 80%;
     height: 3px;
     border-radius: 20px;
-    background: white;
+    background: black;
 }

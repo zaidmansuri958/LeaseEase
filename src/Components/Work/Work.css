@@ -1,0 +1,31 @@
+:root {
+  --main-bg-color: #513dfe;
+  --grey-color: #e7e5eb;
+}
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.card-item {
+  margin-top: 30px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.work h5{
+    color: grey;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+.work h1{
+  margin-top: 10px;
+}

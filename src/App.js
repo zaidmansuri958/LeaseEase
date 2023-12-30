@@ -11,9 +11,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/properties" element={<Properties/>}/>
-          <Route path="/loginsignup" element={<LoginSignup/>}/>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/properties" element={<Properties/>}/>
+          <Route exact path="/loginsignup" element={<LoginSignup/>}/>
         </Routes>
       </BrowserRouter>
     </div>
