@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.74dcf433.css",
-    "main.js": "/LeaseEase/static/js/main.0cd23bd1.js",
+    "main.css": "/LeaseEase/static/css/main.f69d1454.css",
+    "main.js": "/LeaseEase/static/js/main.ac2c2b52.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
     "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
-    "static/media/mumbai.jpeg": "/LeaseEase/static/media/mumbai.bf3db3a6403d82eb5d8e.jpeg",
     "static/media/property.jpg": "/LeaseEase/static/media/property.95eb9438596597ead6cb.jpg",
     "static/media/ahmedabad.jpeg": "/LeaseEase/static/media/ahmedabad.7252d2aa4a2c6d97f637.jpeg",
     "static/media/pune.jpeg": "/LeaseEase/static/media/pune.fada799fdc9c0e20e170.jpeg",
+    "static/media/mumbai.jpeg": "/LeaseEase/static/media/mumbai.ec2f6e83735ea2d5537c.jpeg",
     "static/media/quality.png": "/LeaseEase/static/media/quality.6a71a4575923ba568a6e.png",
+    "static/media/Signup.svg": "/LeaseEase/static/media/Signup.e936c471f8f67804314fbba7ac7e79d4.svg",
     "static/media/family.png": "/LeaseEase/static/media/family.3d564f01ed9cfb86fbb5.png",
-    "static/media/avatar.png": "/LeaseEase/static/media/avatar.fa3b4cc6afcbd4ae3dfe.png",
     "static/media/delhi.jpeg": "/LeaseEase/static/media/delhi.45dc671e62028cf89b1a.jpeg",
     "static/media/banglore.jpeg": "/LeaseEase/static/media/banglore.86d97abc95302fb3e23a.jpeg",
     "static/media/reliability.png": "/LeaseEase/static/media/reliability.42800198af9b517216e5.png",
@@ -21,12 +21,12 @@
     "static/media/currently_listed.png": "/LeaseEase/static/media/currently_listed.b8bfda0eb4b1cc2139de.png",
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.74dcf433.css.map": "/LeaseEase/static/css/main.74dcf433.css.map",
-    "main.0cd23bd1.js.map": "/LeaseEase/static/js/main.0cd23bd1.js.map",
+    "main.f69d1454.css.map": "/LeaseEase/static/css/main.f69d1454.css.map",
+    "main.ac2c2b52.js.map": "/LeaseEase/static/js/main.ac2c2b52.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74dcf433.css",
-    "static/js/main.0cd23bd1.js"
+    "static/css/main.f69d1454.css",
+    "static/js/main.ac2c2b52.js"
   ]
 }
