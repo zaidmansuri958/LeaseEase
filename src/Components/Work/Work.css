@@ -18,6 +18,13 @@
   gap: 5px;
   justify-content: center;
 }
+.work h1{
+  margin-top: 10px;
+  font-size: 36px;
+}
+.card-item h1{
+  font-size: 24px;
+}
 
 .work h5{
     color: grey;
@@ -26,6 +33,4 @@
     margin-top: 20px;
     font-size: 16px;
   }
-.work h1{
-  margin-top: 10px;
-}
+
