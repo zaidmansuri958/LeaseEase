@@ -1,18 +1,26 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.f40a5570.css",
-    "main.js": "/LeaseEase/static/js/main.e47156bc.js",
+    "main.css": "/LeaseEase/static/css/main.e556cf05.css",
+    "main.js": "/LeaseEase/static/js/main.c987b2f8.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
     "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
     "static/media/property.jpg": "/LeaseEase/static/media/property.95eb9438596597ead6cb.jpg",
-    "static/media/avatar.png": "/LeaseEase/static/media/avatar.6450dbb16a273d174440.png",
+    "static/media/quality.png": "/LeaseEase/static/media/quality.6a71a4575923ba568a6e.png",
+    "static/media/family.png": "/LeaseEase/static/media/family.3d564f01ed9cfb86fbb5.png",
+    "static/media/avatar.png": "/LeaseEase/static/media/avatar.fa3b4cc6afcbd4ae3dfe.png",
+    "static/media/reliability.png": "/LeaseEase/static/media/reliability.42800198af9b517216e5.png",
+    "static/media/communication.png": "/LeaseEase/static/media/communication.232e1f08948544c8906d.png",
+    "static/media/location.png": "/LeaseEase/static/media/location.084da7f156b6c3f45476.png",
+    "static/media/shower.png": "/LeaseEase/static/media/shower.2b828a411833d464c71b.png",
+    "static/media/area.png": "/LeaseEase/static/media/area.e5629941d088c3a500a7.png",
+    "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.f40a5570.css.map": "/LeaseEase/static/css/main.f40a5570.css.map",
-    "main.e47156bc.js.map": "/LeaseEase/static/js/main.e47156bc.js.map",
+    "main.e556cf05.css.map": "/LeaseEase/static/css/main.e556cf05.css.map",
+    "main.c987b2f8.js.map": "/LeaseEase/static/js/main.c987b2f8.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f40a5570.css",
-    "static/js/main.e47156bc.js"
+    "static/css/main.e556cf05.css",
+    "static/js/main.c987b2f8.js"
   ]
 }
