@@ -1,0 +1,42 @@
+:root {
+  --main-bg-color: #513dfe;
+  --grey-color: #e7e5eb;
+}
+.team-card {
+  width: 330px;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  box-shadow: 2px 2px 0px 1px grey;
+}
+
+.team-card img{
+    margin-top: 20px;
+    height: 120px;
+}
+.team-card h2{
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.team-card h3{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.team-card h4{
+  background-color:  rgb(6, 6, 36);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.team-card:hover{
+  transform: scale(1.02);
+  box-shadow: 2px 2px 0px 1px rgb(6, 6, 36);
+  transition: 0.8s;
+}

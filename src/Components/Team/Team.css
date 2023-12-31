@@ -1,0 +1,28 @@
+:root {
+  --main-bg-color: #513dfe;
+  --grey-color: #e7e5eb;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 50px;
+  background-color: var(--grey-color);
+}
+
+.team h1 {
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+.team-card-item {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}

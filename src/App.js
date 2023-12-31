@@ -5,6 +5,7 @@ import { Properties} from "./Pages/Properties";
 import { Home} from "./Pages/Home";
 import { TenantRegistration } from "./Pages/TenantRegistration";
 import { LandlordRegistration } from "./Pages/LandlordRegistration";
+import { Aboutus } from "./Pages/Aboutus";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/properties" element={<Properties/>}/>
           <Route exact path="/tenant-registration" element={<TenantRegistration/>}/>
           <Route exact path="/landlord-registration" element={<LandlordRegistration/>}/>
+          <Route exact path="/aboutus" element={<Aboutus/>}/>
         </Routes>
       </BrowserRouter>
     </div>

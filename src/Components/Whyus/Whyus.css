@@ -1,0 +1,46 @@
+:root {
+    --main-bg-color: #513dfe;
+    --grey-color: #e7e5eb;
+  }
+
+
+.why-us {
+  align-items: center;
+  margin: 20px;
+  text-align: center;
+}
+
+.why-us h5{
+    margin-top:30px;
+    font-size: 16px;
+    color:grey ;
+}
+
+.why-us h1{
+    font-size: 36px;
+    margin-top: 50px;
+}
+
+.why-us h2{
+    font-size: 28px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.whyus-card p{
+    font-weight: 100;
+}
+
+.whyus-container{
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.479);
+    margin-top: -20px;
+}
+.whyus-card{
+    align-items: center;
+    text-align: center;
+}
+.whyus-card img{
+    height: 300px;
+    border-radius: 10px 10px;
+}

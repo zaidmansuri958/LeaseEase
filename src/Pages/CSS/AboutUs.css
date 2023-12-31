@@ -1,0 +1,39 @@
+:root {
+    --main-bg-color: #513DFE;
+    --grey-color:#e7e5eb;
+  }
+
+.about-text{
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    background-color:var(--grey-color) ;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.about-text h1{
+    font-size: 48px;
+}
+.box{
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px 4px rgb(6, 6, 36);
+}
+.box img{
+    border-radius: 10px;
+    height: 500px;
+}
+
+.content h1{
+    font-size: 48px;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.377);
+}
+
+.content h2{
+    font-weight: 50;
+    font-size: 16px;
+    padding: 10px;
+    color: rgb(6, 6, 36);
+}
