@@ -1,9 +1,14 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.f69d1454.css",
-    "main.js": "/LeaseEase/static/js/main.ac2c2b52.js",
+    "main.css": "/LeaseEase/static/css/main.c7cac2b8.css",
+    "main.js": "/LeaseEase/static/js/main.89e5cd39.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
     "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
+    "static/media/chat.gif": "/LeaseEase/static/media/chat.5479c21183770f59e9c0.gif",
+    "static/media/contract.gif": "/LeaseEase/static/media/contract.79ff431bc9a1f366f82f.gif",
+    "static/media/aboutus.gif": "/LeaseEase/static/media/aboutus.ef26ae86b84e1f7c52b6.gif",
+    "static/media/Payment.gif": "/LeaseEase/static/media/Payment.31a67e98551275455a8d.gif",
+    "static/media/rent.gif": "/LeaseEase/static/media/rent.68ff15d2a61e17104941.gif",
     "static/media/property.jpg": "/LeaseEase/static/media/property.95eb9438596597ead6cb.jpg",
     "static/media/ahmedabad.jpeg": "/LeaseEase/static/media/ahmedabad.7252d2aa4a2c6d97f637.jpeg",
     "static/media/pune.jpeg": "/LeaseEase/static/media/pune.fada799fdc9c0e20e170.jpeg",
@@ -21,12 +26,12 @@
     "static/media/currently_listed.png": "/LeaseEase/static/media/currently_listed.b8bfda0eb4b1cc2139de.png",
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.f69d1454.css.map": "/LeaseEase/static/css/main.f69d1454.css.map",
-    "main.ac2c2b52.js.map": "/LeaseEase/static/js/main.ac2c2b52.js.map",
+    "main.c7cac2b8.css.map": "/LeaseEase/static/css/main.c7cac2b8.css.map",
+    "main.89e5cd39.js.map": "/LeaseEase/static/js/main.89e5cd39.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f69d1454.css",
-    "static/js/main.ac2c2b52.js"
+    "static/css/main.c7cac2b8.css",
+    "static/js/main.89e5cd39.js"
   ]
 }
