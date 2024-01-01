@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LeaseEase/static/css/main.e5e09f76.css",
-    "main.js": "/LeaseEase/static/js/main.15f62011.js",
+    "main.js": "/LeaseEase/static/js/main.7d64ad13.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
     "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
     "static/media/chat.gif": "/LeaseEase/static/media/chat.5479c21183770f59e9c0.gif",
@@ -27,11 +27,11 @@
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
     "main.e5e09f76.css.map": "/LeaseEase/static/css/main.e5e09f76.css.map",
-    "main.15f62011.js.map": "/LeaseEase/static/js/main.15f62011.js.map",
+    "main.7d64ad13.js.map": "/LeaseEase/static/js/main.7d64ad13.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e5e09f76.css",
-    "static/js/main.15f62011.js"
+    "static/js/main.7d64ad13.js"
   ]
 }
