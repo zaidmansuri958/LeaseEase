@@ -1,0 +1,41 @@
+:root {
+  --main-bg-color: #513dfe;
+  --grey-color: #e7e5eb;
+}
+.conversation {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.conversation:hover {
+  background-color: var(--grey-color);
+  transition: 0.8s;
+}
+
+.conversation:hover .conversationName {
+  color: rgb(6, 6, 36);
+  transition: 0.8s;
+  font-weight: 700;
+}
+
+.conversationImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.conversationName {
+  font-weight: 500;
+  color: var(--grey-color);
+}

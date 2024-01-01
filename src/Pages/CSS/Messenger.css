@@ -1,0 +1,113 @@
+:root {
+  --main-bg-color: #513dfe;
+  --grey-color: #e7e5eb;
+}
+
+.messenger {
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.chatMenu {
+  flex: 3.5;
+  background-color: rgb(6,6,36);
+}
+
+.chatMenuInput input{
+  width: 90%;
+  border-style: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px black;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.chatMenuInput i{
+  color: white;
+}
+
+.chatMenuWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatMenuWrapper {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.chatBox {
+  flex: 8.5;
+  background-color: white;
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatBoxTop {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.chatBoxBottom {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatBoxInput {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.btnSend {
+  padding: 10px;
+  background-color: rgb(6,6,36);
+  color: wheat;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin-right: 40px;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.btnSend:hover{
+  color: rgb(6,6,36);
+  background-color: grey;
+  font-weight: 900;
+  transition: 0.8s;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper {
+  padding: 10px;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

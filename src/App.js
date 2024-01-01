@@ -5,7 +5,9 @@ import { Properties} from "./Pages/Properties";
 import { Home} from "./Pages/Home";
 import { TenantRegistration } from "./Pages/TenantRegistration";
 import { LandlordRegistration } from "./Pages/LandlordRegistration";
+import {ProductDetails} from "./Pages/ProductDetails";
 import { Aboutus } from "./Pages/Aboutus";
+import { Messenger } from "./Pages/Messenger";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route exact path="/tenant-registration" element={<TenantRegistration/>}/>
           <Route exact path="/landlord-registration" element={<LandlordRegistration/>}/>
           <Route exact path="/aboutus" element={<Aboutus/>}/>
+          <Route exact path="/message" element={<Messenger/>}/>
+          <Route exact path="/productDetails" element={<ProductDetails/>}/>
         </Routes>
       </BrowserRouter>
     </div>
