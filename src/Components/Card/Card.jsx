@@ -4,11 +4,13 @@ import bedroom from "../Assets/bedroom.png"
 import bathroom from "../Assets/shower.png"
 import area from "../Assets/area.png"
 import location from "../Assets/location.png"
+import { Link } from "react-router-dom";
 
 export const Card = (props) => {
   return (
     <div className="card">
-      <img src={props.image} alt="Image" />
+     <Link to='/productDetails'>
+      <img src={props.image} alt="Image" /></Link>
       <div className="description">
         <p className="price">{props.price}</p>
         <p className="name">{props.name}</p>
@@ -31,10 +33,12 @@ export const Card = (props) => {
           </div>
         </div>
       </div>
+      <Link to='/message'>
       <div className="owner-profile">
         <img src={props.owner_img} />
         <p>{props.owner}</p>
       </div>
-    </div>
+      </Link>
+  </div>
   );
 };
