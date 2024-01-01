@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.c7cac2b8.css",
-    "main.js": "/LeaseEase/static/js/main.89e5cd39.js",
+    "main.css": "/LeaseEase/static/css/main.e5e09f76.css",
+    "main.js": "/LeaseEase/static/js/main.15f62011.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
     "static/media/building.png": "/LeaseEase/static/media/building.98a64189871f8a19a24f.png",
     "static/media/chat.gif": "/LeaseEase/static/media/chat.5479c21183770f59e9c0.gif",
@@ -26,12 +26,12 @@
     "static/media/currently_listed.png": "/LeaseEase/static/media/currently_listed.b8bfda0eb4b1cc2139de.png",
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.c7cac2b8.css.map": "/LeaseEase/static/css/main.c7cac2b8.css.map",
-    "main.89e5cd39.js.map": "/LeaseEase/static/js/main.89e5cd39.js.map",
+    "main.e5e09f76.css.map": "/LeaseEase/static/css/main.e5e09f76.css.map",
+    "main.15f62011.js.map": "/LeaseEase/static/js/main.15f62011.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7cac2b8.css",
-    "static/js/main.89e5cd39.js"
+    "static/css/main.e5e09f76.css",
+    "static/js/main.15f62011.js"
   ]
 }
