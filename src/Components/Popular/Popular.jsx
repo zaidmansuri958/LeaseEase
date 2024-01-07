@@ -2,7 +2,19 @@ import React from "react";
 import "./Popular.css";
 import data_properties from "../Assets/data";
 import { Card } from "../Card/Card";
+import { useEffect } from "react";
 export const Popular = () => {
+
+  // const getProperties=async()=>{
+  //   const response=await fetch('http://127.0.0.1:5000/properties');
+  //   const data=await response.json();
+  //   console.log(data);
+
+  // }
+
+  // useEffect(() => {
+  //   getProperties()
+  // });
   return (
     <div className="popular">
     <h1>Best Properties Available</h1>
