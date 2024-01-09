@@ -9,6 +9,7 @@ import {ProductDetails} from "./Pages/ProductDetails";
 import { Aboutus } from "./Pages/Aboutus";
 import { Messenger } from "./Pages/Messenger";
 import { Agreement } from "./Pages/Agreement";
+import { PropertiesUpload } from "./Pages/PropertiesUpload";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/message" element={<Messenger/>}/>
           <Route exact path="/productDetails" element={<ProductDetails/>}/>
           <Route exact path="/agreement" element={<Agreement/>}/>
+          <Route exact path="/add-properties" element={<PropertiesUpload/>}/>
         </Routes>
       </BrowserRouter>
     </div>

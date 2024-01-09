@@ -152,9 +152,9 @@
 .input-field span{
   display: flex;
   margin: 10px 10px 10px 10px;
-  font-size: 14px;
-  color: grey;
-  font-weight: 100;
+  font-size: 15px;
+  color: rgb(6,6,36);
+  font-weight: 600;
 }
 
 .left hr{

@@ -45,7 +45,6 @@ export const Agreement = () => {
       initialValues: initialValues,
       // validationSchema: ,
       onSubmit: (values) => {
-        document.getElementsByClassName(".made-date").textContent = "hii";
         console.log(values);
       },
     });

@@ -1,0 +1,218 @@
+:root {
+  --main-bg-color: #513DFE;
+  --grey-color:#e7e5eb;
+}
+
+.properties-upload {
+  display: flex;
+}
+
+.properties-upload-right {
+  flex: 1.1;
+  background-color: var(--grey-color);
+  padding:20px 20px 20px 20px;
+}
+
+.properties-upload-left {
+  flex: 1;
+  background-color: white;
+}
+
+.img-1,
+.img-2,
+.img-3,
+.img-4,
+.img-5,
+.img-6 {
+  margin: 10px;
+  border-radius: 8px;
+  height: 250px;
+  flex: 1;
+  box-shadow: 2px 2px black;
+}
+
+.first-row,
+.second-row {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 50px;
+}
+
+.properties-upload img {
+  height: 80%;
+  width: 100%;
+  background-position: center;
+  border-radius: 8px 8px 0px 0px;
+
+}
+
+.properties-upload input[type="file"] {
+  width: 100%;
+  align-self: flex-end;
+  background-color: wheat;
+  text-align: end;
+}
+
+.properties-input-field span {
+  display: flex;
+  font-size: 14px;
+  color: rgb(6, 6, 36);
+  font-weight: 600;
+  padding: 10px;
+}
+
+.properties-input-field select {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.properties-input-field input{
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-top: 2px solid rgb(6, 6, 36);
+  border-radius: 8px;
+  background-color: rgb(6, 6, 36);
+  color: white;
+}
+
+.properties-input-field input[type="checkbox"] {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.checkboxes{
+  background-color: rgb(6, 6, 36);
+  display: flex;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+.amenities{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 4px 4px 0px black;
+  border-radius: 8px 10px 12px 12px;
+  border: 1px solid rgb(6, 6, 36);
+}
+
+.amenities span{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: rgb(6, 6, 36);
+  font-weight: 900;
+}
+
+.checkboxes label{
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+
+.properties-input-field textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-top: 1px solid grey;
+  }
+
+.properties-input-field {
+  margin: 10px;
+  background-color: white;
+  box-shadow: 4px 4px 0px black;
+  border-radius: 8px 10px 12px 12px;
+  border: 1px solid rgb(6, 6, 36);
+
+}
+
+.properties-input-field input:focus {
+  outline: none;
+}
+
+.properties-input-field textarea:focus {
+    outline: none;
+  }
+
+
+.properties-input-field select:focus {
+  outline: none;
+}
+
+.properties-specification-section{
+    display: flex;
+}
+
+.properties-amount-section{
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
+
+
+.properties-input-field select{
+    padding: 10px;
+    font-family: 'Poppins';
+    background-color: rgb(6, 6, 36);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.properties-upload-left button{
+  width: 40%;
+  margin: 20px;
+  padding: 10px;
+  font-family: 'poppins';
+  background-color: rgb(6,6,36);
+  color: white;
+  cursor: pointer;
+  border:none;
+  border-radius: 5px;
+  box-shadow: 4px 5px rgb(72, 72, 72);
+  transition: 1s;
+}
+
+
+.properties-upload-right button{
+  width: 40%;
+  margin: 20px;
+  padding: 10px;
+  font-family: 'poppins';
+  background-color: rgb(6,6,36);
+  color: white;
+  cursor: pointer;
+  border:none;
+  border-radius: 5px;
+  box-shadow: 4px 5px rgb(72, 72, 72);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+}
+
+.properties-upload-left button:hover{
+  transform: translate(2px,4px);
+  box-shadow: 1px 2px grey;
+  outline: none;
+}
+
+.properties-upload-right button:hover{
+  transform: translate(2px,4px);
+  box-shadow: 1px 2px grey;
+  outline: none;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}

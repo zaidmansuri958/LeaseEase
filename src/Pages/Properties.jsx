@@ -7,6 +7,9 @@ export const Properties = () => {
     <Link  to='/agreement'>
     <button>Generate agreement</button>
     </Link>
+    <Link  to='/add-properties'>
+    <button>Add Properties</button>
+    </Link>
     </div>
   )
 }
