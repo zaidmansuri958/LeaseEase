@@ -28,7 +28,12 @@
 }
 
 .whyus-card p{
-    font-weight: 100;
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 200;
+    margin-bottom: 20px;
 }
 
 .whyus-container{

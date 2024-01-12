@@ -33,7 +33,7 @@ h1{
   font-weight: 600;
   font-size: 25px;
 }
-p{
+.small-card p{
   color: grey;
   font-size: 12px;
   margin-left: 10px;

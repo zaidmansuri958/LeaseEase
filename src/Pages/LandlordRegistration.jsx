@@ -4,6 +4,8 @@ import "./CSS/Registration.css";
 import { useFormik } from "formik";
 import { signUpSchema } from "../Schemas";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 const initialValues = {
   First_Name: "",
@@ -25,13 +27,17 @@ export const LandlordRegistration = () => {
       onSubmit: (values) => {
         console.log(values);
         axios
-          .post("http://localhost:5000/landlord/signUp",values,{withCredentials:true})
+          .post("http://localhost:5000/landlord/signUp", values, {
+            withCredentials: true,
+          })
           .then((res) => {
             console.log(res);
+            Cookies.set("uid", res.data.token);
           })
           .catch((err) => {
-            console.log(err) 
-            alert(err)});
+            console.log(err);
+            alert(err);
+          });
       },
     });
 
@@ -179,6 +185,9 @@ export const LandlordRegistration = () => {
               ) : null}
               <button type="submit">SignUp</button>
             </form>
+            <p>
+              Already have an account ? <Link to="/login">Click here</Link>
+            </p>
           </div>
         </div>
       </div>

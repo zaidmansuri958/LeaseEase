@@ -30,8 +30,6 @@
 .chatMenuWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-direction: column;
 }
 
 .chatMenuWrapper {
@@ -49,6 +47,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .chatBoxTop {
@@ -111,4 +110,14 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.noConversationText{
+  position: absolute;
+  top: 30%;
+  font-size: 42px;
+  cursor: default;
+  color: rgb(167, 165, 165);
+  justify-content: center;
+  left: 10%;
 }

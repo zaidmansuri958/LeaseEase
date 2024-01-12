@@ -5,6 +5,7 @@ import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { useFormik } from "formik";
 import axios from "axios";
+import upload from "../Components/Assets/upload.svg"
 
 export const PropertiesUpload = () => {
   const landlord_id = "659b9adafddfb1b73cbacb5f";
@@ -42,9 +43,8 @@ export const PropertiesUpload = () => {
 
         const urls = await Promise.all(promises);
         setImgUrls(urls);
-        window.location.reload();
 
-        // Assign urls to the propertyMedia field
+  
         values.propertyMedia = urls;
 
         console.log("Updated values:", values);
@@ -53,6 +53,7 @@ export const PropertiesUpload = () => {
       }
     }
   };
+
   // const handleClick = () => {
   //   if (img !== null) {
   //     img.forEach((val) => {
@@ -67,15 +68,15 @@ export const PropertiesUpload = () => {
   //     values.propertyMedia = imgUrls;
   //   }
   // };
-  useEffect(() => {
-    listAll(ref(imageDB, `properties-media/${landlord_id}`)).then((images) => {
-      images.items.forEach((val) => {
-        getDownloadURL(val).then((url) => {
-          setImgUrls((data) => [...data, url]);
-        });
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   listAll(ref(imageDB, `properties-media/${landlord_id}`)).then((images) => {
+  //     images.items.forEach((val) => {
+  //       getDownloadURL(val).then((url) => {
+  //         setImgUrls((data) => [...data, url]);
+  //       });
+  //     });
+  //   });
+  // }, []);
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
@@ -87,11 +88,16 @@ export const PropertiesUpload = () => {
           .post("http://localhost:5000/properties", values)
           .then((res) => {
             console.log(res);
+            alert("Property Added")
+            setImgUrls("")
+            setImg("")
+            values=initialValues
           })
           .catch((err) => {
             console.log(err);
             alert(err);
           });
+        
       },
     });
 
@@ -100,21 +106,21 @@ export const PropertiesUpload = () => {
       <div className="properties-upload-left">
         <div className="first-row">
           <div className="img-1">
-            <img src={imgUrls[0]} alt="image" />
+            <img src={imgUrls[0] ? imgUrls[0] : upload } alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
             />
           </div>
           <div className="img-2">
-            <img src={imgUrls[1]} alt="image" />
+            <img src={imgUrls[1] ? imgUrls[1] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
             />
           </div>
           <div className="img-3">
-            <img src={imgUrls[2]} alt="image" />
+            <img src={imgUrls[2] ? imgUrls[2] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
@@ -123,21 +129,21 @@ export const PropertiesUpload = () => {
         </div>
         <div className="second-row">
           <div className="img-4">
-            <img src={imgUrls[3]} alt="image" />
+            <img src={imgUrls[3] ? imgUrls[3] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
             />
           </div>
           <div className="img-5">
-            <img src={imgUrls[4]} alt="image" />
+            <img src={imgUrls[4] ? imgUrls[4] : upload } alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
             />
           </div>
           <div className="img-6">
-            <img src={imgUrls[5]} alt="image" />
+            <img src={imgUrls[5] ? imgUrls[5] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}

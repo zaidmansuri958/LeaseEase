@@ -54,7 +54,7 @@
     flex: 3;
     color: white;
     font-size: 18px;
-    margin-top: 15px;
+    margin: 0px;
 }
 
 .card:hover{

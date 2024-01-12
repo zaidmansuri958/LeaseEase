@@ -8,12 +8,14 @@
     box-shadow: 0 1px 3px -2px black ;
     background-color: var(--grey-color);
     align-items: center;
+    padding: 10px 0px 0px 0px
 }
 .navbar h1{
     font-size: 48px;
     font-weight: 600;
     cursor: pointer;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.377);
+
 }
 .nav-menu{
     display: flex;
@@ -75,4 +77,34 @@
     height: 3px;
     border-radius: 20px;
     background: black;
+    margin-top: 5px;
+}
+
+.register-hide{
+    display: none;
+}
+.greetings-hide{
+    display: none;
+}
+
+.greetings{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.greetings i{
+   justify-content: center;
+   height: 50px;
+   width: 50px;
+   object-fit: cover;
+   font-size: 32px;
+   margin-left: 10px;
+   cursor: pointer;
+   color: rgb(6, 6, 36);
+}
+.greetings i:hover{
+    color: grey;
+    transition: 0.8s;
 }

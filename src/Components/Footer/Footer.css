@@ -68,3 +68,12 @@
 }
 .copyright i{
     margin-right: 10px;}
+
+.footer p{
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}

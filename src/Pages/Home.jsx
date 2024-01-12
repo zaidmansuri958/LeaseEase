@@ -4,7 +4,7 @@ import { Hero } from '../Components/Hero/Hero'
 import { ListingNumbers } from '../Components/ListingNumbers/ListingNumbers'
 import { Popular } from '../Components/Popular/Popular'
 import { Whyus } from '../Components/Whyus/Whyus'
-import { Work } from '../Components/Work/Work'
+import Cookies from "js-cookie";
 
 export const Home = () => {
   return (
