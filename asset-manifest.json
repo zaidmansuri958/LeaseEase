@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.04c91d9d.css",
-    "main.js": "/LeaseEase/static/js/main.dff561ff.js",
+    "main.css": "/LeaseEase/static/css/main.9c63c395.css",
+    "main.js": "/LeaseEase/static/js/main.1715c263.js",
     "static/js/703.848692d6.chunk.js": "/LeaseEase/static/js/703.848692d6.chunk.js",
     "static/js/379.fa2100b5.chunk.js": "/LeaseEase/static/js/379.fa2100b5.chunk.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
@@ -19,23 +19,25 @@
     "static/media/Signup.svg": "/LeaseEase/static/media/Signup.e936c471f8f67804314fbba7ac7e79d4.svg",
     "static/media/family.png": "/LeaseEase/static/media/family.3d564f01ed9cfb86fbb5.png",
     "static/media/delhi.jpeg": "/LeaseEase/static/media/delhi.45dc671e62028cf89b1a.jpeg",
+    "static/media/login.svg": "/LeaseEase/static/media/login.ca84cf7a085f9829a2547e3161664bed.svg",
     "static/media/banglore.jpeg": "/LeaseEase/static/media/banglore.86d97abc95302fb3e23a.jpeg",
     "static/media/reliability.png": "/LeaseEase/static/media/reliability.42800198af9b517216e5.png",
     "static/media/communication.png": "/LeaseEase/static/media/communication.232e1f08948544c8906d.png",
     "static/media/location.png": "/LeaseEase/static/media/location.084da7f156b6c3f45476.png",
     "static/media/shower.png": "/LeaseEase/static/media/shower.2b828a411833d464c71b.png",
+    "static/media/upload.svg": "/LeaseEase/static/media/upload.20ced0b401264ad70adec8c2d6f7d454.svg",
     "static/media/area.png": "/LeaseEase/static/media/area.e5629941d088c3a500a7.png",
     "static/media/currently_listed.png": "/LeaseEase/static/media/currently_listed.b8bfda0eb4b1cc2139de.png",
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.04c91d9d.css.map": "/LeaseEase/static/css/main.04c91d9d.css.map",
-    "main.dff561ff.js.map": "/LeaseEase/static/js/main.dff561ff.js.map",
+    "main.9c63c395.css.map": "/LeaseEase/static/css/main.9c63c395.css.map",
+    "main.1715c263.js.map": "/LeaseEase/static/js/main.1715c263.js.map",
     "703.848692d6.chunk.js.map": "/LeaseEase/static/js/703.848692d6.chunk.js.map",
     "379.fa2100b5.chunk.js.map": "/LeaseEase/static/js/379.fa2100b5.chunk.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04c91d9d.css",
-    "static/js/main.dff561ff.js"
+    "static/css/main.9c63c395.css",
+    "static/js/main.1715c263.js"
   ]
 }
