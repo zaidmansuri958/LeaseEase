@@ -31,6 +31,7 @@ export const Popular = () => {
               desc={item.desc}
               owner={item.owner}
               owner_img={item.owner_img}
+              LandlordId={item.LandlordId}
             />
           );
         })}

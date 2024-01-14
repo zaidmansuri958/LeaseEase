@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar props={user}/>
+        <Navbar user={user}/>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/properties" element={<Properties />} />
@@ -63,6 +63,7 @@ function App() {
           <Route exact path="/agreement" element={<Agreement />} />
           <Route exact path="/add-properties" element={<PropertiesUpload />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

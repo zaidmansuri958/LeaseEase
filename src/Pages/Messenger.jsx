@@ -3,45 +3,79 @@ import { Conversations } from "../Components/Conversations/Conversations";
 import { Message } from "../Components/Message/Message";
 import "./CSS/Messenger.css";
 import axios from "axios";
-import {io} from "socket.io-client"
+import { io } from "socket.io-client";
 import Cookies from "js-cookie";
 
-
 export const Messenger = () => {
+
+  const token = Cookies.get("uid");
+  console.log( "Bearer " + token);
+
+  const [user,setUser]=useState([]);
+
+  useEffect(()=>{
+    const getUser = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/landlord", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+        setUser(res.data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUser()
+  },[])
 
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
-  const socket=useRef();
-  const token=Cookies.get("uid")
-  // let user=jsonwebtoken.verify(token,"LeaseEase");
-  const userId=""
-  const scrollRef=useRef();
+  const socket = useRef();
+  const userId = user._id
+  console.log("hhi"+user._id);
+  const scrollRef = useRef();
 
-useEffect(()=>{
-  socket.current=io("ws://localhost:8900");
-  socket.current.on("getMessage", (data) => {
-    setArrivalMessage({
-      sender: data.senderId,
-      text: data.text,
-      createdAt: Date.now(),
+
+  useEffect(() => {
+    socket.current = io("ws://localhost:8900");
+    socket.current.on("getMessage", (data) => {
+      setArrivalMessage({
+        sender: data.senderId,
+        text: data.text,
+        createdAt: Date.now(),
+      });
     });
-  });
-},[]);
+  }, []);
 
-useEffect(() => {
-  arrivalMessage &&
-    currentChat?.members.includes(arrivalMessage.sender) &&
-    setMessages((prev) => [...prev, arrivalMessage]);
-}, [arrivalMessage, currentChat]);
+  // useEffect(() => {
+  //   const conData = { receiverId: receiverId, senderId: userId };
+  //   const createCon = async () => {
+  //     try {
+  //       const res = await axios.post(
+  //         "http://localhost:5000/conversation",
+  //         conData
+  //       );
+  //       createConversation(res);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   createCon();
+  // }, []);
 
-  useEffect(()=>{
-    socket.current.emit("addUser",userId)
-  },[userId])
+  useEffect(() => {
+    arrivalMessage &&
+      currentChat?.member.includes(arrivalMessage.sender) &&
+      setMessages((prev) => [...prev, arrivalMessage]);
+  }, [arrivalMessage, currentChat]);
 
-
+  useEffect(() => {
+    socket.current.emit("addUser", userId);
+  }, [userId]);
 
   useEffect(() => {
     const getConversation = async () => {
@@ -79,11 +113,9 @@ useEffect(() => {
       text: newMessage,
     };
 
-    const receiverId = currentChat.member.find(
-      (member) => member !== userId
-    );
+    const receiverId = currentChat.member.find((member) => member !== userId);
 
-    console.log(receiverId);
+    console.log("hello"+receiverId);
 
     socket.current.emit("sendMessage", {
       senderId: userId,
@@ -101,8 +133,8 @@ useEffect(() => {
   };
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({behavior:"smooth"})
-  },[messages]);
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
   return (
     <div className="messenger">
       <div className="chatMenu">
@@ -125,7 +157,7 @@ useEffect(() => {
               <div className="chatBoxTop">
                 {messages.map((m) => (
                   <div ref={scrollRef}>
-                  <Message message={m} own={m.sender === userId} />
+                    <Message message={m} own={m.sender === userId} />
                   </div>
                 ))}
               </div>

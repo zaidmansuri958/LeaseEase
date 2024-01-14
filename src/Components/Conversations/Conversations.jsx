@@ -12,7 +12,7 @@ export const Conversations = ({conversation,currentUser}) => {
 
     const getUser=async () =>{
       try{
-        const res=await axios("http://localhost:5000/landlord/"+otherUserId);
+        const res=await axios.get("http://localhost:5000/landlord/"+otherUserId);
         setUser(res.data)
       }catch(err){
         console.log(err)

@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import loginImg from "../Components/Assets/login.svg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 
 const initialValues = {
@@ -12,7 +12,9 @@ const initialValues = {
     Login_Password: "",
   };
 
+
 export const Login = () => {
+  const navigate=useNavigate();
     const { values, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -24,7 +26,8 @@ export const Login = () => {
           .then((res) => {
             console.log(res);
             Cookies.set('uid', res.data.token);
-            alert("Login successfully");
+            alert("Login successfully")
+            navigate('/LeaseEase');       
           })
           .catch((err) => {
             console.log(err) 

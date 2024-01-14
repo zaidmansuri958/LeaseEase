@@ -4,9 +4,14 @@ import bedroom from "../Assets/bedroom.png"
 import bathroom from "../Assets/shower.png"
 import area from "../Assets/area.png"
 import location from "../Assets/location.png"
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export const Card = (props) => {
+  const navigate=useNavigate()
+
+  const goToMessage=()=>{
+    navigate('/message',{state:{LandlordId:props.LandlordId}})
+  }
   return (
     <div className="card">
      <Link to='/productDetails'>
@@ -33,12 +38,12 @@ export const Card = (props) => {
           </div>
         </div>
       </div>
-      <Link to='/message'>
-      <div className="owner-profile">
+      {/* <Link to= '/message' LandlordId={props.LandlordId}> */}
+      <div className="owner-profile" onClick={goToMessage}>
         <img src={props.owner_img} />
-        <p>{props.owner}</p>
+        <p>{props.owner}{"hii "}{props.LandlordId}</p>
       </div>
-      </Link>
+      {/* </Link> */}
   </div>
   );
 };
