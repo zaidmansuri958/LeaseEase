@@ -5,11 +5,14 @@ import "./CSS/Messenger.css";
 import axios from "axios";
 import { io } from "socket.io-client";
 import Cookies from "js-cookie";
+import { useLocation } from "react-router-dom";
 
 export const Messenger = () => {
 
   const token = Cookies.get("uid");
+  const location=useLocation();
   console.log( "Bearer " + token);
+  const otherUserId=location.state.LandlordId;
 
   const [user,setUser]=useState([]);
 
@@ -51,21 +54,28 @@ export const Messenger = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const conData = { receiverId: receiverId, senderId: userId };
-  //   const createCon = async () => {
-  //     try {
-  //       const res = await axios.post(
-  //         "http://localhost:5000/conversation",
-  //         conData
-  //       );
-  //       createConversation(res);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   createCon();
-  // }, []);
+  useEffect(() => {
+    const conData = { receiverId: otherUserId, senderId: userId };
+    const createCon = async () => {
+      try {
+        const res = await axios.post(
+          "http://localhost:5000/conversation",
+          conData
+        );
+        console.log(res)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const checkCon= async()=>{
+      console.log("http://localhost:5000/conversation/find/" + userId + "/" + otherUserId)
+      const res=await axios.get("http://localhost:5000/conversation/find/" + userId + "/" + otherUserId);
+        if(res.data===null){
+          createCon()
+        }
+    }
+  checkCon();
+  }, [userId,otherUserId]);
 
   useEffect(() => {
     arrivalMessage &&
