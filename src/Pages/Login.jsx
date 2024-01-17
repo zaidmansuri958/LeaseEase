@@ -10,22 +10,31 @@ import { Link,useNavigate } from "react-router-dom";
 const initialValues = {
     Login_Email_ID: "",
     Login_Password: "",
+    user_type:""
   };
 
 
 export const Login = () => {
   const navigate=useNavigate();
+  let url="http://localhost:5000/";
     const { values, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
       onSubmit: (values) => {
         console.log("click")
         console.log(values);
+        console.log(values.user_type)
+        if(values.user_type==="Landlord"){
+          url=url+"landlord/signIn"
+        }else{
+          url=url+"tenant/signIn"
+        }
         axios
-          .post("http://localhost:5000/landlord/signIn",values,{withCredentials:true})
+          .post(url,values,{withCredentials:true})
           .then((res) => {
             console.log(res);
             Cookies.set('uid', res.data.token);
+            Cookies.set('user-type',values.user_type)
             alert("Login successfully")
             navigate('/LeaseEase');       
           })
@@ -74,6 +83,7 @@ export const Login = () => {
               <div className="user-type-input">
                 <label>Login As : </label>
                 <select onChange={handleChange} name="user_type">
+                <option value="" label=''>-------</option>
                   <option value="Landlord" label="Landlord">
                     Landlord
                   </option>

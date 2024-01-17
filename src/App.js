@@ -15,35 +15,41 @@ import { Login } from "./Pages/Login";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-
 function App() {
   const token = Cookies.get("uid");
-  console.log( "Bearer " + token);
+  const user_type = Cookies.get("user-type");
+  console.log(user_type);
+  console.log("Bearer " + token);
+  let url = "http://localhost:5000/";
+  if (user_type === "Tenant") {
+    url = url + "tenant";
+  } else {
+    url = url + "landlord";
+  }
 
-  const [user,setUser]=useState([]);
+  console.log(url);
+  const [user, setUser] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/landlord", {
+        const res = await axios.get(url, {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
-        setUser(res.data)
+        setUser(res.data);
       } catch (error) {
         console.log(error);
       }
     };
-    getUser()
-  },[])
-
-
-
+    getUser();
+  }, []);
+  console.log(user);
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar user={user}/>
+        <Navbar user={user} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/properties" element={<Properties />} />

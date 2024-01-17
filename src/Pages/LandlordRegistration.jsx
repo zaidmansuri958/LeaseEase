@@ -5,9 +5,11 @@ import { useFormik } from "formik";
 import { signUpSchema } from "../Schemas";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
 
 const initialValues = {
+  Landlord_ID:v4(),
   First_Name: "",
   Last_Name: "",
   Email_ID: "",
@@ -20,6 +22,7 @@ const initialValues = {
 };
 
 export const LandlordRegistration = () => {
+  const navigate=useNavigate();
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -33,6 +36,9 @@ export const LandlordRegistration = () => {
           .then((res) => {
             console.log(res);
             Cookies.set("uid", res.data.token);
+            Cookies.set("user-type","Landlord");
+            alert("Register Successfully");
+            navigate('/LeaseEase');  
           })
           .catch((err) => {
             console.log(err);
@@ -155,6 +161,7 @@ export const LandlordRegistration = () => {
                 <p className="input-error">{errors.city}</p>
               ) : null}
               <div className="gender">
+              <label className="title">Gender</label>
                 <input
                   type="radio"
                   className="gender-val"

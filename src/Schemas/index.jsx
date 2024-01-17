@@ -10,5 +10,4 @@ export const signUpSchema=Yup.object({
     Date_Of_Birth:Yup.string().min(8).max(25).required("Please enter birth date"),
     City_ID:Yup.string().min(2).max(25).required("Please enter city"),
     Gender:Yup.string().min(2).max(25).required("Please enter gender"),
-
 })

@@ -28,6 +28,7 @@
     color: rgb(6, 6, 36);
     font-weight: 600;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
 }
 .name{
     margin: 6px 8px;

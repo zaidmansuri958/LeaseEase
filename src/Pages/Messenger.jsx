@@ -10,6 +10,8 @@ import { useLocation } from "react-router-dom";
 export const Messenger = () => {
 
   const token = Cookies.get("uid");
+  const user_type=Cookies.get("user-type")
+  let url="http://localhost:5000/"
   const location=useLocation();
   console.log( "Bearer " + token);
   const otherUserId=location.state.LandlordId;
@@ -17,9 +19,14 @@ export const Messenger = () => {
   const [user,setUser]=useState([]);
 
   useEffect(()=>{
+    if(user_type==="Landlord"){
+      url=url+"landlord"
+    }else{
+      url=url+"tenant"
+    }
     const getUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/landlord", {
+        const res = await axios.get(url, {
           headers: {
             Authorization: "Bearer " + token,
           },

@@ -4,9 +4,11 @@
 }
 
 .hero {
-  height: 100vh;
+  height: calc(100vh - 70px);
   background: linear-gradient(180deg, #ffffff, var(--grey-color) 60%);
   display: flex;
+  /* background-image: url("../Assets/bg.svg");
+  background-size: auto; */
 }
 
 .hero-left {
@@ -22,7 +24,6 @@
 .hero-left h1 {
   font-size: 36px;
   color: black;
-  margin-top: -100px;
 }
 .hero-left h3 {
   font-size: 14px;
@@ -32,20 +33,27 @@
 .hero-left button {
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 16px;
-  background-color: var(--main-bg-color);
   width: 60%;
   font-weight: bold;
-  box-shadow: 2px 2px 6px wh;
-  cursor: pointer;
-  color: var(--grey-color);
   margin-top: 10px;
   font-weight: 400;
+  font-family: "poppins";
+  background-color: rgb(6, 6, 36);
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px rgb(72, 72, 72);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
 }
-.hero-left button:hover{
-  background-color: blue;
-  transition: 1.2s;
+.hero-left button:hover {
+  transform: translate(2px, 4px);
+  box-shadow: 1px 2px grey;
+  outline: none;
 }
 .hero-right {
   flex: 1;
@@ -55,17 +63,16 @@
   margin-left: 80px;
 }
 .hero-right img {
-  height: 100vh;
+  height: 100%;
   width: 800px;
 }
-
 .number-details {
   width: 100%;
   align-items: center;
   display: flex;
   margin-top: 40px;
   justify-content: center;
-  box-shadow: 2px 2px 4px black;
+  box-shadow: 3px 3px 0px rgb(6, 6, 36);
   border-radius: 10px;
 }
 .number-details h1 {
@@ -81,7 +88,6 @@
   display: flex;
   line-height: 1;
   font-weight: 800;
- 
 }
 .happy_customers {
   flex: 1;
@@ -89,7 +95,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: #7d6efd;
-
 }
 .award_wining {
   flex: 1;

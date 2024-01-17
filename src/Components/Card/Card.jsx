@@ -17,7 +17,8 @@ export const Card = (props) => {
      <Link to='/productDetails'>
       <img src={props.image} alt="Image" /></Link>
       <div className="description">
-        <p className="price">{props.price}</p>
+      <div className="price">
+        <p>{props.price}</p><span>&#8377;</span></div>
         <p className="name">{props.name}</p>
         <div className="aminities">
           <div className="bedroom">
@@ -41,7 +42,7 @@ export const Card = (props) => {
       {/* <Link to= '/message' LandlordId={props.LandlordId}> */}
       <div className="owner-profile" onClick={goToMessage}>
         <img src={props.owner_img} />
-        <p>{props.owner}{"hii "}{props.LandlordId}</p>
+        <p>{props.owner}</p>
       </div>
       {/* </Link> */}
   </div>
