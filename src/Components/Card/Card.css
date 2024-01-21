@@ -30,8 +30,11 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
 }
+.price p{
+    margin-bottom: 0px;
+}
 .name{
-    margin: 6px 8px;
+    margin: 4px 4px;
 }
 .desc{
     margin: 6px 0px;

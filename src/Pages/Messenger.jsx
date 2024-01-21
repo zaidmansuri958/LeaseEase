@@ -8,21 +8,20 @@ import Cookies from "js-cookie";
 import { useLocation } from "react-router-dom";
 
 export const Messenger = () => {
-
   const token = Cookies.get("uid");
-  const user_type=Cookies.get("user-type")
-  let url="http://localhost:5000/"
-  const location=useLocation();
-  console.log( "Bearer " + token);
-  const otherUserId=location.state.LandlordId;
+  const user_type = Cookies.get("user-type");
+  let url = "http://localhost:5000/";
+  console.log("Bearer " + token);
+  const location = useLocation();
 
-  const [user,setUser]=useState([]);
-
-  useEffect(()=>{
-    if(user_type==="Landlord"){
-      url=url+"landlord"
-    }else{
-      url=url+"tenant"
+  const otherUserId = location.state.LandlordId;
+  console.log("hhhhhhhhhh"+otherUserId)
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    if (user_type === "Landlord") {
+      url = url + "landlord";
+    } else {
+      url = url + "tenant";
     }
     const getUser = async () => {
       try {
@@ -31,13 +30,13 @@ export const Messenger = () => {
             Authorization: "Bearer " + token,
           },
         });
-        setUser(res.data)
+        setUser(res.data);
       } catch (error) {
         console.log(error);
       }
     };
-    getUser()
-  },[])
+    getUser();
+  }, []);
 
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -45,10 +44,9 @@ export const Messenger = () => {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const socket = useRef();
-  const userId = user._id
-  console.log("hhi"+user._id);
+  const userId = user._id;
+  console.log("hhi" + user._id);
   const scrollRef = useRef();
-
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
@@ -69,20 +67,24 @@ export const Messenger = () => {
           "http://localhost:5000/conversation",
           conData
         );
-        console.log(res)
+        console.log(res);
       } catch (err) {
         console.log(err);
       }
     };
-    const checkCon= async()=>{
-      console.log("http://localhost:5000/conversation/find/" + userId + "/" + otherUserId)
-      const res=await axios.get("http://localhost:5000/conversation/find/" + userId + "/" + otherUserId);
-        if(res.data===null){
-          createCon()
-        }
-    }
-  checkCon();
-  }, [userId,otherUserId]);
+    const checkCon = async () => {
+      const res = await axios.get(
+        "http://localhost:5000/conversation/find/" + userId + "/" + otherUserId
+      );
+      if (res.data === null && userId!=null && otherUserId!=null) {
+        createCon();
+      }
+      else{
+     
+      }
+    };
+    checkCon();
+  }, [otherUserId,userId]);
 
   useEffect(() => {
     arrivalMessage &&
@@ -132,7 +134,7 @@ export const Messenger = () => {
 
     const receiverId = currentChat.member.find((member) => member !== userId);
 
-    console.log("hello"+receiverId);
+    console.log("hello" + receiverId);
 
     socket.current.emit("sendMessage", {
       senderId: userId,

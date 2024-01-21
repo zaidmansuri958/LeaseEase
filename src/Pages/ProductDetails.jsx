@@ -1,114 +1,151 @@
 import React from "react";
 import "./CSS/ProductDetails.css";
-import { Card } from "../Components/Card/Card";
-import data_properties from "../Components/Assets/data";
 import { Footer } from "../Components/Footer/Footer";
-import image from "../Components/Assets/property.jpg";
+import { useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { Popular } from "../Components/Popular/Popular";
 
 export const ProductDetails = () => {
+  const navigate = useNavigate();
+  const changeImage = (id) => {
+    const img = document.getElementById(id).src;
+    document.getElementById("main-img").src = img;
+  };
+  const location = useLocation();
+  const propertyData = location.state.propertiesData;
+
+  const goToMessage = () => {
+    if (Cookies.get("uid")) {
+      if (Cookies.get("user-type") === "Tenant") {
+        navigate("/message", {
+          state: { LandlordId: propertyData.LandlordId },
+        });
+      } else {
+        alert("Please Register as Tenant");
+      }
+    } else {
+      alert("Please Signup First");
+    }
+  };
   return (
     <>
       <div className="maindiv ">
         <div className="subdiv">
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[0]}
+              id="img1"
+              alt="Image"
+              onClick={() => changeImage("img1")}
+            />
           </div>
 
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[1]}
+              id="img2"
+              alt="Image"
+              onClick={() => changeImage("img2")}
+            />
           </div>
 
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[2]}
+              id="img3"
+              alt="Image"
+              onClick={() => changeImage("img3")}
+            />
           </div>
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[3]}
+              id="img4"
+              alt="Image"
+              onClick={() => changeImage("img4")}
+            />
           </div>
 
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[4]}
+              id="img5"
+              alt="Image"
+              onClick={() => changeImage("img5")}
+            />
           </div>
 
           <div className="subdiv1">
-            <img src={image} alt="Image" />
+            <img
+              src={propertyData.propertyMedia[5]}
+              id="img6"
+              alt="Image"
+              onClick={() => changeImage("img6")}
+            />
           </div>
         </div>
         <div className="dcard mx-3">
-          <img src={image} className="card-img-top" alt="..." />
+          <img
+            src={propertyData.propertyMedia[0]}
+            className="card-img-top"
+            id="main-img"
+            alt="..."
+          />
         </div>
 
         <div className="p-npc">
           <div className="p-name card-body">
-            <h4 className="card-title">Saumya Saujanya ||</h4>
+            <h4 className="card-title">{propertyData.propertyName}</h4>
             <details>
               <summary>Location</summary>
-              <p>
-                <a className="card-text">
-                  3 BHK Flat In Khokhara,Ahemedabad East .
-                </a>
-              </p>
+              <p>{propertyData.propertyAddress}</p>
             </details>
           </div>
 
           <div className="property-numbers card-body">
             <li>
-              <div className="property-price"><h3>50000</h3><span>&nbsp;&#8377;</span></div>
-              <p>(Price)</p>
+              <div className="property-price">
+                <h3>{propertyData.rentAmount}</h3>
+                <span>&nbsp;&#8377;</span>
+              </div>
+              <p>(Rent)</p>
             </li>
             <li>
-              <h3>1,140 sqft</h3>
+              <h3>{propertyData.squareFootage} sqft</h3>
               <p>(Super Built Area)</p>
             </li>
             <li>
-              <h3>3 BHK</h3>
-              <p>(2 Bathroom)</p>
+              <h3>{propertyData.bedRooms}</h3>
+              <p>(Bedrooms)</p>
             </li>
+            <li>
+            <div className="property-price">
+              <h3>{propertyData.depositAmount}</h3>
+              <span>&nbsp;&#8377;</span>
+              </div>
+              <p>(Deposit amount)</p>
+            </li>
+          </div>
+          <h5>Amenities</h5>
+          <div className="amenities-details">
+            {propertyData.amenities.map((item) => (
+              <div className="amenities-details-item">
+                {item}
+              </div>
+            ))}
           </div>
 
           <div className="p-description card-body">
-            <p>
-              Experience a new style of living with saumya ||.It offers an
-              exclusive range of 3BHK apartment in
-              Khokhara,Ahemedabad..Properties, diverse in purpose and design,
-              define the fabric of real estate. Residences, from urban
-              apartments to sprawling estates, cater to varied lifestyles.
-              Commercial spaces, encompassing offices and retail establishments,
-              drive economic activity. Investment properties, avenues for
-              financial growth, present opportunities for income and capital
-              appreciation. These assets, ranging from quaint cottages to
-              towering skyscrapers, embody the aspirations and practical needs
-              of individuals and businesses alike.
-            </p>
+            <p>{propertyData.desc}</p>
           </div>
-          <div className="contact-details">
+          <div className="contact-details" onClick={goToMessage}>
             <button>Contact Landlord</button>
           </div>
         </div>
       </div>
 
       <div className="popular">
-        <h1>Related Properties </h1>
-        <h5>
-          This Are Some Related Properties,
-          <br />
-          Same Budget And Rooms.
-        </h5>
-        <div className="popular-item">
-          {data_properties.map((item, i) => {
-            return (
-              <Card
-                key={i}
-                id={item.id}
-                image={item.image}
-                name={item.name}
-                price={item.price}
-                desc={item.desc}
-                owner={item.owner}
-                owner_img={item.owner_img}
-              />
-            );
-          })}
-        </div>
+        <Popular />
       </div>
       <Footer />
     </>

@@ -6,13 +6,15 @@ import { v4 } from "uuid";
 import { useFormik } from "formik";
 import axios from "axios";
 import upload from "../Components/Assets/upload.svg"
+import Cookies from "js-cookie";
 
 export const PropertiesUpload = () => {
-  const landlord_id = "659b9adafddfb1b73cbacb5f";
+  const token = Cookies.get('uid');
+  
   const initialValues = {
     propertyID: v4(),
-    LandlordId: landlord_id,
     propertyAddress: "",
+    propertyName:"",
     rentAmount: "",
     depositAmount: "",
     availability: 1,
@@ -34,7 +36,7 @@ export const PropertiesUpload = () => {
         const promises = img.map((val) => {
           const imgRef = ref(
             imageDB,
-            `properties-media/${landlord_id}/${v4()}`
+            `properties-media/${token}/${v4()}`
           );
           return uploadBytes(imgRef, val)
             .then((val) => getDownloadURL(val.ref))
@@ -54,30 +56,6 @@ export const PropertiesUpload = () => {
     }
   };
 
-  // const handleClick = () => {
-  //   if (img !== null) {
-  //     img.forEach((val) => {
-  //       const imgRef = ref(imageDB, `properties-media/${landlord_id}/${v4()}`);
-  //       uploadBytes(imgRef, val).then((val) => {
-  //         getDownloadURL(val.ref).then((url) => {
-  //           setImgUrls((data) => [...data, url]);
-  //         });
-  //       });
-  //     });
-  //     console.log(imgUrls)
-  //     values.propertyMedia = imgUrls;
-  //   }
-  // };
-  // useEffect(() => {
-  //   listAll(ref(imageDB, `properties-media/${landlord_id}`)).then((images) => {
-  //     images.items.forEach((val) => {
-  //       getDownloadURL(val).then((url) => {
-  //         setImgUrls((data) => [...data, url]);
-  //       });
-  //     });
-  //   });
-  // }, []);
-
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -85,7 +63,10 @@ export const PropertiesUpload = () => {
       onSubmit: (values) => {
         console.log(values);
         axios
-          .post("http://localhost:5000/properties", values)
+          .post("http://localhost:5000/properties", values,{
+            headers: {
+              Authorization: "Bearer " + token,
+            }})
           .then((res) => {
             console.log(res);
             alert("Property Added")
@@ -156,6 +137,18 @@ export const PropertiesUpload = () => {
       </div>
       <div className="properties-upload-right">
         <form onSubmit={handleSubmit}>
+        <div className="properties-input-field">
+            <span>Enter Name of the property</span>
+            <input
+              type="text"
+              placeholder="e.g. Godrej Park"
+              value={values.propertyName}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              name="propertyName"
+              autoComplete="off"
+            />
+          </div>
           <div className="properties-input-field">
             <span>Enter Address of the property</span>
             <input
@@ -307,6 +300,9 @@ export const PropertiesUpload = () => {
           <div className="properties-input-field">
             <span>Select City</span>
             <select name="city" onChange={handleChange}>
+            <option value="" label="">
+               -----------
+              </option>
               <option value="659590b7deacfb00cc806674" label="Mumbai">
                 Mumbai
               </option>

@@ -91,20 +91,61 @@
     display: flex;
     text-align: center;
     justify-content: center;
-
 }
 
 .greetings i{
    justify-content: center;
-   height: 50px;
+   height: 35px;
    width: 50px;
    object-fit: cover;
    font-size: 32px;
-   margin-left: 10px;
+   margin-left: 20px;
    cursor: pointer;
    color: rgb(6, 6, 36);
+   margin: auto;
 }
 .greetings i:hover{
     color: grey;
     transition: 0.8s;
 }
+
+.greetings h3{
+    margin-top: 8px;
+}
+
+.messageBtn{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    box-shadow: 2px 3px rgb(72, 72, 72);
+    cursor: pointer;
+    background-color: rgb(6, 6, 36);
+    margin-right: 30px;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom:6px;
+    transition: 0.8s;
+}
+
+.messageBtn:hover{
+    transform: translate(2px,4px);
+    box-shadow: 1px 1px grey;
+    outline: none;
+  
+}
+
+.messageBtn i{
+    font-size: 25px;
+    color: white;
+    height: 25px;
+    cursor:pointer;
+}
+
+.messageBtn label{
+    margin-bottom: 0px;
+    margin-left: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+
