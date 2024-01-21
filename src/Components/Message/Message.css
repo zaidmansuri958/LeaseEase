@@ -36,6 +36,11 @@
 
 .messageBottom{
     font-size: 12px;
+    display: flex;
+    color: black;
+    border-radius: 8px;
+    padding: 2px;
+    font-weight: 800;
 }
 
 .message.own{
@@ -43,8 +48,8 @@
 }
 
 .message.own .messageTxt{
-   background-color: grey;
-   color: rgb(6, 6, 36);
-   font-weight: 700;
+   background-color: rgb(49, 49, 49);
+   color:white;
+   font-weight: 400;
    font-size: 14px;
 }
