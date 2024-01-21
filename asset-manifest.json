@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LeaseEase/static/css/main.d29bd3e4.css",
-    "main.js": "/LeaseEase/static/js/main.c907223c.js",
+    "main.css": "/LeaseEase/static/css/main.4f7e5ad8.css",
+    "main.js": "/LeaseEase/static/js/main.6af829b0.js",
     "static/js/703.848692d6.chunk.js": "/LeaseEase/static/js/703.848692d6.chunk.js",
     "static/js/379.fa2100b5.chunk.js": "/LeaseEase/static/js/379.fa2100b5.chunk.js",
     "static/js/787.cacc7042.chunk.js": "/LeaseEase/static/js/787.cacc7042.chunk.js",
@@ -11,7 +11,6 @@
     "static/media/aboutus.gif": "/LeaseEase/static/media/aboutus.ef26ae86b84e1f7c52b6.gif",
     "static/media/Payment.gif": "/LeaseEase/static/media/Payment.31a67e98551275455a8d.gif",
     "static/media/rent.gif": "/LeaseEase/static/media/rent.68ff15d2a61e17104941.gif",
-    "static/media/property.jpg": "/LeaseEase/static/media/property.95eb9438596597ead6cb.jpg",
     "static/media/ahmedabad.jpeg": "/LeaseEase/static/media/ahmedabad.7252d2aa4a2c6d97f637.jpeg",
     "static/media/pune.jpeg": "/LeaseEase/static/media/pune.fada799fdc9c0e20e170.jpeg",
     "static/media/mumbai.jpeg": "/LeaseEase/static/media/mumbai.ec2f6e83735ea2d5537c.jpeg",
@@ -30,14 +29,14 @@
     "static/media/currently_listed.png": "/LeaseEase/static/media/currently_listed.b8bfda0eb4b1cc2139de.png",
     "static/media/bedroom.png": "/LeaseEase/static/media/bedroom.8f96363b7f8ffbc198a0.png",
     "index.html": "/LeaseEase/index.html",
-    "main.d29bd3e4.css.map": "/LeaseEase/static/css/main.d29bd3e4.css.map",
-    "main.c907223c.js.map": "/LeaseEase/static/js/main.c907223c.js.map",
+    "main.4f7e5ad8.css.map": "/LeaseEase/static/css/main.4f7e5ad8.css.map",
+    "main.6af829b0.js.map": "/LeaseEase/static/js/main.6af829b0.js.map",
     "703.848692d6.chunk.js.map": "/LeaseEase/static/js/703.848692d6.chunk.js.map",
     "379.fa2100b5.chunk.js.map": "/LeaseEase/static/js/379.fa2100b5.chunk.js.map",
     "787.cacc7042.chunk.js.map": "/LeaseEase/static/js/787.cacc7042.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d29bd3e4.css",
-    "static/js/main.c907223c.js"
+    "static/css/main.4f7e5ad8.css",
+    "static/js/main.6af829b0.js"
   ]
 }
