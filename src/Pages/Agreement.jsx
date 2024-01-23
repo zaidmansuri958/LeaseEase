@@ -1,8 +1,19 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import "./CSS/Agreement.css";
 import { useFormik } from "formik";
 import html2canvas from "html2canvas";
-import jsPdf from "jspdf";
+import jsPDF from "jspdf";
+import axios from "axios";
+import { imageDB } from "../config";
+import { v4 } from "uuid";
+import Cookies from "js-cookie";
+import {
+  getDownloadURL,
+  listAll,
+  ref,
+  uploadBytes,
+  getStorage,
+} from "firebase/storage";
 
 const initialValues = {
   Date_Of_Agreement: "",
@@ -21,33 +32,122 @@ const initialValues = {
   Tenant_Pan: "",
   Tenant_Address: "",
   Rent_Day: "",
+  Landlord_Email: "",
+  Tenant_Email: "",
 };
 
 export const Agreement = () => {
-  const downloadPDF = () => {
-    const capture = document.querySelector(".preview", {
-      scrollX: 0,
-      scrollY: 0,
-    });
-    html2canvas(capture).then((canvas) => {
-      const imgData = canvas.toDataURL("img/png");
-      const doc = new jsPdf("p", "mm", "government-letter");
-      const imgProps= doc.getImageProperties(imgData);
-      const componentWidth = doc.internal.pageSize.getWidth();
-      const componentHeight = (imgProps.height * componentWidth) / imgProps.width;
-      doc.addImage(imgData, "PNG", 0, 0, componentWidth, componentHeight);
-      doc.addPage();
-      doc.save("./rent-agreement.pdf");
+  const token = Cookies.get("uid");
+  const [landlord, setLandlord] = useState(null);
+  const [tenant, setTenant] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState(null);
+
+  const uploadFile = async (file) => {
+    return new Promise((resolve, reject) => {
+      const almostUniqueFileName = Date.now().toString();
+      const storage = getStorage();
+      const storageRef = ref(storage, "pdfs/" + almostUniqueFileName + ".pdf");
+      return uploadBytes(storageRef, file)
+        .then((snapshot) => {
+          // Use getDownloadURL() instead of downloadURL for the latest Firebase versions
+          getDownloadURL(snapshot.ref).then((downloadURL) => resolve(downloadURL));
+        })
+        .catch((error) => {
+          console.error("Error uploading file:", error);
+        });
     });
   };
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
       // validationSchema: ,
       onSubmit: (values) => {
+        downloadPDF().then(
+          axios
+            .post(
+              "http://localhost:5000/agreement",
+              {
+                Agreement_ID: v4(),
+                Property_ID: "65aaa639533cfca957c7c1cb",
+                Tenant_ID: tenant._id,
+                Landlord_ID: landlord._id,
+                Start_Date: values.Tenancy_Start_Date,
+                End_Date: values.Tenancy_End_Date,
+                rentAmount: values.Monthly_Rent,
+                depositAmount: values.Security_Amount,
+                PDF_document: pdfUrl,
+                status: "0",
+              },
+              {
+                headers: {
+                  Authorization: "Bearer " + token,
+                },
+              }
+            )
+            .then(() => {
+              alert("Agreement generated successfully");
+            })
+            .catch((error) => {
+              alert(error);
+            })
+        );
         console.log(values);
       },
     });
+
+  const downloadPDF = async () => {
+    const HTML_Content = document.querySelector(".preview");
+    try {
+      const canvas = await html2canvas(HTML_Content, {
+        useCORS: true,
+        scale: 3,
+      });
+      const imgData = canvas.toDataURL("image/png", 2.0);
+
+      const pdf = new jsPDF("p", "pt", [canvas.width / 2, canvas.height / 2]);
+      pdf.addImage(imgData, "PNG", 0, 0, canvas.width / 2, canvas.height / 2);
+      const pdfBlob = pdf.output("blob");
+      console.log("hii" + pdfBlob);
+
+      uploadFile(pdfBlob).then(downloadURL => {
+        console.log('PDF uploaded successfully. Download URL:', downloadURL);
+        setPdfUrl(downloadURL)
+      }) .catch(() => {
+        console.log('Error uploading PDF.');
+      });
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    }
+  };
+
+  useEffect(() => {
+    const getlandlord = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:5000/landlord/email/" + values.Landlord_Email
+        );
+        setLandlord(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getlandlord();
+  }, [values.Landlord_Email]);
+
+  useEffect(() => {
+    const getTenant = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:5000/tenant/email/" + values.Tenant_Email
+        );
+        setTenant(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTenant();
+  }, [values.Tenant_Email]);
   return (
     <div className="agreement">
       <div className="left">
@@ -211,6 +311,17 @@ export const Agreement = () => {
                 onBlur={handleBlur}
               />
             </div>
+            <div className="input-field">
+              <span>Enter Landlord Email Address</span>
+              <input
+                type="email"
+                placeholder="Landlord email address"
+                name="Landlord_Email"
+                value={values.Landlord_Email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
             <hr />
             <h1>Tenant Details</h1>
             <div className="input-field">
@@ -242,6 +353,17 @@ export const Agreement = () => {
                 placeholder="Tenant current address"
                 name="Tenant_Address"
                 value={values.Tenant_Address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <div className="input-field">
+              <span>Enter Tenant Email Address</span>
+              <input
+                type="email"
+                placeholder="Tenant email address"
+                name="Tenant_Email"
+                value={values.Tenant_Email}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -613,9 +735,9 @@ export const Agreement = () => {
             <span className="landlord-Pan-number"> {values.Tenant_Pan} </span>
           </div>
         </div>
-        <div className="submit-btn">
+        {/* <div className="submit-btn">
           <button onClick={downloadPDF}>DOWNLOAD</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

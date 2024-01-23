@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navbar } from "./Components/Navbar/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { React, useState, useEffect } from "react";
 import { Properties } from "./Pages/Properties";
 import { Home } from "./Pages/Home";
@@ -14,6 +14,7 @@ import { PropertiesUpload } from "./Pages/PropertiesUpload";
 import { Login } from "./Pages/Login";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { Dashboard } from "./Pages/Dashboard";
 
 function App() {
   const token = Cookies.get("uid");
@@ -70,6 +71,11 @@ function App() {
           <Route exact path="/add-properties" element={<PropertiesUpload />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="*" element={<Home />} />
+          <Route exact path="/dashboard/*" element={
+          <Dashboard>
+            <Route path="myprofile" element={<Login />} />
+          </Dashboard>}>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
