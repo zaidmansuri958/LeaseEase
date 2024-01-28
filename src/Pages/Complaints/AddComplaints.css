@@ -1,0 +1,119 @@
+.complaints{
+  width: 100%;
+}
+.complaints-form{
+  margin: 10px 20%;
+  background-color: rgba(128, 128, 128, 0.66);
+  padding: 30px 50px;
+  border-radius: 8px;
+}
+.complaints-input-field span {
+  display: flex;
+  font-size: 14px;
+  color: rgb(6, 6, 36);
+  font-weight: 600;
+  padding: 10px;
+}
+
+.complaints-input-field select {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: 'Poppins';
+  background-color: rgb(6, 6, 36);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.complaints-input-field textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-top: 1px solid grey;
+}
+
+.complaints-input-field {
+  margin: 10px;
+  background-color: white;
+  box-shadow: 4px 4px 0px black;
+  border-radius: 8px 10px 12px 12px;
+  border: 1px solid rgb(6, 6, 36);
+}
+
+.complaints-input-field input:focus {
+  outline: none;
+}
+
+.complaints-input-field textarea:focus {
+  outline: none;
+}
+
+.complaints-input-field select:focus {
+  outline: none;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.show{
+  visibility: visible;
+}
+
+
+.toggle-btn{
+  margin: 20px;
+  padding: 10px;
+  width: 15%;
+  font-family: 'poppins';
+  background-color: rgb(6,6,36);
+  color: white;
+  cursor: pointer;
+  border:none;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgb(72, 72, 72);
+  transition: 1s;
+}
+
+.toggle-btn,.post-btn button:hover{
+  transform: translate(2px,4px);
+  box-shadow: 1px 2px grey;
+  outline: none;
+}
+.toggle-btn:focus{
+  outline: none;
+}
+
+.post-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-btn button{
+  padding: 10px;
+  font-family: 'poppins';
+  background-color: rgb(6,6,36);
+  color: white;
+  cursor: pointer;
+  border:none;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgb(72, 72, 72);
+  transition: 1s;
+  margin-top: 20px;
+}
+
+.complain-card{
+  background-color: rgba(128, 128, 128, 0.699);
+  margin: 20px 40px;
+  display: flex;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 4px black;
+}
+
+.toggle-container{
+  display: flex;
+  justify-content: right;
+}

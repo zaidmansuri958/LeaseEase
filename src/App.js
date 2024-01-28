@@ -15,6 +15,7 @@ import { Login } from "./Pages/Login";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { Dashboard } from "./Pages/Dashboard";
+import { AddComplaints } from "./Pages/Complaints/AddComplaints";
 
 function App() {
   const token = Cookies.get("uid");
@@ -71,6 +72,7 @@ function App() {
           <Route exact path="/add-properties" element={<PropertiesUpload />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="*" element={<Home />} />
+          <Route exact path="/complaint" element={<AddComplaints/>}/>
           <Route exact path="/dashboard/*" element={
           <Dashboard>
             <Route path="myprofile" element={<Login />} />

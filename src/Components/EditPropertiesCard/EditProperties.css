@@ -1,0 +1,122 @@
+.Edit_Properties_Details {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(128, 128, 128, 0.243);
+    margin: 30px;
+}
+
+.Properties_Image {
+    display: flex;
+    height: 400px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.Prop_Image {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Properties_Details {
+    height: 400px;
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.Pro_Name {
+    height: 20%;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Pro_Address {
+    height: 15%;
+    width: 100%;
+
+}
+
+.Pro_Details {
+    color: gray;
+    height: 40%;
+    width: 100%;
+
+}
+
+.Pro_Buttons {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.Pro_Edit_Button {
+    margin-top: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 30%;
+    font-weight: 400;
+    font-family: "poppins";
+    background-color:blueviolet;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(6, 6, 36);
+    transition: 1s;
+}
+.Pro_Suspend_Button {
+    margin-top: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 30%;
+    font-weight: 400;
+    font-family: "poppins";
+    background-color: rgb(6, 6, 36);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(72, 72, 72);
+    transition: 1s;
+}
+.Pro_Delete_Button {
+    margin-top: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 30%;
+    font-weight: 400;
+    font-family: "poppins";
+    background-color: rgb(140, 3, 3);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(6,6,36);
+    transition: 1s;
+}
+.Pro_Edit_Button:hover {
+    transform: translate(2px, 4px);
+    box-shadow: 1px 2px grey;
+    outline: none;
+}
+.Pro_Suspend_Button:hover {
+    transform: translate(2px, 4px);
+    box-shadow: 1px 2px grey;
+    outline: none;
+}
+.Pro_Delete_Button:hover {
+    transform: translate(2px, 4px);
+    box-shadow: 1px 2px grey;
+    outline: none;
+}

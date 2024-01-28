@@ -1,0 +1,9 @@
+.content{
+    flex: 80%;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+}
+.dashboard{
+    display: flex;
+    width: 100%;
+}

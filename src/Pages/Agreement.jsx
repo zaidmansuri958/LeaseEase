@@ -34,6 +34,7 @@ const initialValues = {
   Rent_Day: "",
   Landlord_Email: "",
   Tenant_Email: "",
+  Property_ID:""
 };
 
 export const Agreement = () => {
@@ -41,6 +42,24 @@ export const Agreement = () => {
   const [landlord, setLandlord] = useState(null);
   const [tenant, setTenant] = useState(null);
   const [pdfUrl, setPdfUrl] = useState(null);
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    const getProperties = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/properties/landlord", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+        setProperties(res.data);
+        console.log(res.data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProperties();
+  }, []);
 
   const uploadFile = async (file) => {
     return new Promise((resolve, reject) => {
@@ -50,7 +69,9 @@ export const Agreement = () => {
       return uploadBytes(storageRef, file)
         .then((snapshot) => {
           // Use getDownloadURL() instead of downloadURL for the latest Firebase versions
-          getDownloadURL(snapshot.ref).then((downloadURL) => resolve(downloadURL));
+          getDownloadURL(snapshot.ref).then((downloadURL) =>
+            resolve(downloadURL)
+          );
         })
         .catch((error) => {
           console.error("Error uploading file:", error);
@@ -69,7 +90,7 @@ export const Agreement = () => {
               "http://localhost:5000/agreement",
               {
                 Agreement_ID: v4(),
-                Property_ID: "65aaa639533cfca957c7c1cb",
+                Property_ID: values.Property_ID,
                 Tenant_ID: tenant._id,
                 Landlord_ID: landlord._id,
                 Start_Date: values.Tenancy_Start_Date,
@@ -110,12 +131,14 @@ export const Agreement = () => {
       const pdfBlob = pdf.output("blob");
       console.log("hii" + pdfBlob);
 
-      uploadFile(pdfBlob).then(downloadURL => {
-        console.log('PDF uploaded successfully. Download URL:', downloadURL);
-        setPdfUrl(downloadURL)
-      }) .catch(() => {
-        console.log('Error uploading PDF.');
-      });
+      uploadFile(pdfBlob)
+        .then((downloadURL) => {
+          console.log("PDF uploaded successfully. Download URL:", downloadURL);
+          setPdfUrl(downloadURL);
+        })
+        .catch(() => {
+          console.log("Error uploading PDF.");
+        });
     } catch (error) {
       console.error("Error generating PDF:", error);
     }
@@ -188,6 +211,15 @@ export const Agreement = () => {
             </div>
             <hr />
             <h1>Property Details</h1>
+            <div className="input-field">
+              <span>Select Property</span>
+              <select onChange={handleChange} name="Property_ID">
+              <option>----Select Property------</option>
+                {properties.map((items) => (
+                  <option value={items._id}>{items.propertyName}</option>
+                ))}
+              </select>
+            </div>
             <div className="input-field">
               <span>Enter Property Address</span>
               <input

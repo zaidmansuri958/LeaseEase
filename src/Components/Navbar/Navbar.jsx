@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import Cookies from "js-cookie";
+import avatar from "../Assets/avatar.png";
 
 export const Navbar = ({ user }) => {
   const navigate = useNavigate();
+  const [openProfile, setOpenprofile] = useState(false);
 
   const goToMessage = () => {
     navigate("/message", { state: { LandlordId: null } });
   };
 
+  const logout = () => {
+    Cookies.remove("uid");
+    Cookies.remove("user-type");
+    alert("Logout Successfully");
+  };
   const [menu, setMenu] = useState("home");
   return (
     <div className="navbar">
@@ -66,15 +74,25 @@ export const Navbar = ({ user }) => {
           JSON.stringify(user) === "[]" ? "greetings-hide" : "greetings"
         }
       >
-       <div className="messageBtn" onClick={goToMessage}>
+        {/* <div className="messageBtn" onClick={goToMessage}>
          <label>
             Messages
       </label>
           <i class="fa-solid fa-message"></i>
-        </div>
+        </div> */}
         <h3>Welcome, {user.First_Name}</h3>
-        <i class="fa-solid fa-user"></i>
-       
+        <img src={avatar} onClick={()=>setOpenprofile((prev)=> !prev)}/>
+        {openProfile && (
+          <div className="dropdown-list">
+            <ul>
+              <Link to="/dashboard"><li>Profile</li></Link>
+              <li onClick={goToMessage}>Messages</li>
+              <li onClick={logout} className="logout-btn">
+                Logout
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

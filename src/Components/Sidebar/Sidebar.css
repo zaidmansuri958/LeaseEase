@@ -1,22 +1,124 @@
 /* Sidebar.css */
 .sidebar {
-  width: 200px;
-  height: 100%;
-  background-color: #333;
-  color: white;
-  padding: 20px;
+  height: calc(100vh - 100px);
   box-sizing: border-box;
+  flex: 20%;
+  background-color: rgb(6,6,36);
 }
 
-.sidebar a {
-  display: block;
-  margin-bottom: 10px;
+.sub-sidebar {
+  display: flex;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+
+}
+
+.sidebarlist {
+  height: auto;
+  padding: 0;
+  width: 100%;
+
+}
+
+.Row {
+  list-style: none;
+  height: 70px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: 'poppins';
+  list-style: none;
+  /*border: 2px solid black;*/
+  margin-top: 10px;
+}
+
+.Row a {
+  margin-bottom: 0px;
   text-decoration: none;
-  color: white;
   font-size: 16px;
   transition: color 0.3s;
+  color: white;
+  font-size: 20px;
+  height: 70px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  /*border: 2px solid;*/
 }
 
-.sidebar a:hover {
-  color: #61dafb; /* Change color on hover as an example */
+.Row:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+  color: white;
+  border-radius: 8px;
+  
+  /* Change color on hover as an example */
+}
+
+.Row a :hover {
+  color: white;
+}
+
+#icon {
+  flex: 30%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+#title {
+  flex: 80%;
+}
+
+.list-style {
+  list-style: none;
+  font-family:'poppins';
+  font-size: 25px;
+  color: red;
+}
+
+.menu-bar {
+  justify-content: space-around;
+  display: flex;
+  height: auto;
+  width: 100%;
+  /*border: 2px solid black;*/
+  align-items: center;
+
+}
+
+.l1 {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  color: white;
+  align-items: center;
+  cursor: pointer;
+}
+
+.l2 {
+  color: white;
+  height: 70px;
+  width: 170px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.Nav-menu {
+  position: fixed;
+  top: 104px;
+  left: -250px;
+  transition: 0ms;
 }

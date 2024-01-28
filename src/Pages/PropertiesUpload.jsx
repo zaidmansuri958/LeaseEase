@@ -5,16 +5,16 @@ import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { useFormik } from "formik";
 import axios from "axios";
-import upload from "../Components/Assets/upload.svg"
+import upload from "../Components/Assets/upload.svg";
 import Cookies from "js-cookie";
+import { propertiesUploadSchema } from "../Schemas/propetiesUpload";
 
 export const PropertiesUpload = () => {
-  const token = Cookies.get('uid');
-  
+  const token = Cookies.get("uid");
   const initialValues = {
     propertyID: v4(),
     propertyAddress: "",
-    propertyName:"",
+    propertyName: "",
     rentAmount: "",
     depositAmount: "",
     availability: 1,
@@ -34,10 +34,7 @@ export const PropertiesUpload = () => {
     if (img !== null) {
       try {
         const promises = img.map((val) => {
-          const imgRef = ref(
-            imageDB,
-            `properties-media/${token}/${v4()}`
-          );
+          const imgRef = ref(imageDB, `properties-media/${token}/${v4()}`);
           return uploadBytes(imgRef, val)
             .then((val) => getDownloadURL(val.ref))
             .then((url) => url);
@@ -46,10 +43,10 @@ export const PropertiesUpload = () => {
         const urls = await Promise.all(promises);
         setImgUrls(urls);
 
-  
         values.propertyMedia = urls;
 
         console.log("Updated values:", values);
+        alert("Media Uploaded")
       } catch (error) {
         console.error("Error uploading images:", error);
       }
@@ -59,26 +56,26 @@ export const PropertiesUpload = () => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
-      // validationSchema: ,
+      validationSchema: propertiesUploadSchema,
       onSubmit: (values) => {
         console.log(values);
         axios
-          .post("http://localhost:5000/properties", values,{
+          .post("http://localhost:5000/properties", values, {
             headers: {
               Authorization: "Bearer " + token,
-            }})
+            },
+          })
           .then((res) => {
             console.log(res);
-            alert("Property Added")
-            setImgUrls("")
-            setImg("")
-            values=initialValues
+            alert("Property Added");
+            setImgUrls("");
+            setImg("");
+            values = initialValues;
           })
           .catch((err) => {
             console.log(err);
             alert(err);
           });
-        
       },
     });
 
@@ -87,7 +84,7 @@ export const PropertiesUpload = () => {
       <div className="properties-upload-left">
         <div className="first-row">
           <div className="img-1">
-            <img src={imgUrls[0] ? imgUrls[0] : upload } alt="image" />
+            <img src={imgUrls[0] ? imgUrls[0] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
@@ -117,7 +114,7 @@ export const PropertiesUpload = () => {
             />
           </div>
           <div className="img-5">
-            <img src={imgUrls[4] ? imgUrls[4] : upload } alt="image" />
+            <img src={imgUrls[4] ? imgUrls[4] : upload} alt="image" />
             <input
               type="file"
               onChange={(e) => setImg((data) => [...data, e.target.files[0]])}
@@ -137,7 +134,7 @@ export const PropertiesUpload = () => {
       </div>
       <div className="properties-upload-right">
         <form onSubmit={handleSubmit}>
-        <div className="properties-input-field">
+          <div className="properties-input-field">
             <span>Enter Name of the property</span>
             <input
               type="text"
@@ -149,6 +146,9 @@ export const PropertiesUpload = () => {
               autoComplete="off"
             />
           </div>
+          {errors.propertyName && touched.propertyName ? (
+            <p className="input-error">{errors.propertyName}</p>
+          ) : null}
           <div className="properties-input-field">
             <span>Enter Address of the property</span>
             <input
@@ -161,6 +161,9 @@ export const PropertiesUpload = () => {
               autoComplete="off"
             />
           </div>
+          {errors.propertyAddress && touched.propertyAddress ? (
+            <p className="input-error">{errors.propertyAddress}</p>
+          ) : null}
           <div className="properties-amount-section">
             <div className="properties-input-field">
               <span>Enter Rent Amount</span>
@@ -188,6 +191,12 @@ export const PropertiesUpload = () => {
               />
             </div>
           </div>
+          {errors.rentAmount && touched.rentAmount ? (
+            <p className="input-error">{errors.rentAmount}</p>
+          ) : null}
+          {errors.depositAmount && touched.depositAmount ? (
+            <p className="input-error">{errors.depositAmount}</p>
+          ) : null}
           <div className="properties-input-field">
             <span>Enter Property Type</span>
             <input
@@ -200,6 +209,9 @@ export const PropertiesUpload = () => {
               autoComplete="off"
             />
           </div>
+          {errors.propertyType && touched.propertyType ? (
+            <p className="input-error">{errors.propertyType}</p>
+          ) : null}
           <div className="properties-specification-section">
             <div className="properties-input-field">
               <span>Number Of Bathrooms</span>
@@ -240,6 +252,15 @@ export const PropertiesUpload = () => {
               />
             </div>
           </div>
+          {errors.bathRooms && touched.bathRooms ? (
+            <p className="input-error">{errors.bathRooms}</p>
+          ) : null}
+          {errors.bedRooms && touched.bedRooms ? (
+            <p className="input-error">{errors.bedRooms}</p>
+          ) : null}
+          {errors.squareFootage && touched.squareFootage ? (
+            <p className="input-error">{errors.squareFootage}</p>
+          ) : null}
 
           <div className="amenities">
             <span>Amenities</span>
@@ -296,12 +317,15 @@ export const PropertiesUpload = () => {
               autoComplete="off"
             />
           </div>
+          {errors.description && touched.description ? (
+            <p className="input-error">{errors.description}</p>
+          ) : null}
 
           <div className="properties-input-field">
             <span>Select City</span>
             <select name="city" onChange={handleChange}>
-            <option value="" label="">
-               -----------
+              <option value="" label="">
+                -----------
               </option>
               <option value="659590b7deacfb00cc806674" label="Mumbai">
                 Mumbai
@@ -320,6 +344,9 @@ export const PropertiesUpload = () => {
               </option>
             </select>
           </div>
+          {errors.city && touched.city ? (
+            <p className="input-error">{errors.city}</p>
+          ) : null}
           <div className="btn-container">
             <button type="submit">Add Property</button>
           </div>

@@ -1,0 +1,96 @@
+.Edit-Profile {
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid black;*/
+    display: flex;
+}
+
+.edit-profile {
+    display: flex;
+    /*border: 2px solid red;*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 78%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--grey-color);
+    box-shadow: 1px 5px rgb(67, 65, 65);
+}
+
+.avatar {
+    height: 120px;
+    width: 130px;
+    border-radius: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border:2px solid red;*/
+}
+.Upload_Icon{
+    font-size: 20px;
+    margin: -10px;
+    /*color: blue;*/
+
+}
+.img-display-before {
+   
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid rgb(85, 83, 83);
+}
+
+.img-display-after {
+  
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid rgb(85, 83, 83);
+
+}
+
+/*........................Form First Name And Last Name.........................................................*/
+
+.first-last-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 45px;
+    margin-bottom: 22px;
+}
+
+
+.first-name {
+    margin-right: 20px;
+}
+
+/*........................Form Email And Contact Number.........................................................*/
+
+.email-number {
+    width: 50%;
+    justify-content: center;
+}
+
+
+/*........................Form City And Country.........................................................*/
+
+.city-country {
+    display: flex;
+    flex-direction: row;
+}
+
+.City {
+    margin-right: 20px;
+}
+
+
+/*................................................Form Password.................................
+                .................................................
+.password{
+    width: 50%;
+    justify-content: center;
+}*/
+

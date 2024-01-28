@@ -5,7 +5,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { Link,useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { signUpSchema } from "../Schemas";
+import { signUpSchema } from "../Schemas/signUp";
 import { v4 } from "uuid";
 
 export const TenantRegistration = () => {

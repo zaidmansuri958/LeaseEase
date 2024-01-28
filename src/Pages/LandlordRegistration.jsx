@@ -2,7 +2,7 @@ import React from "react";
 import signupimg from "../Components/Assets/Signup.svg";
 import "./CSS/Registration.css";
 import { useFormik } from "formik";
-import { signUpSchema } from "../Schemas";
+import { signUpSchema } from "../Schemas/signUp";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Link,useNavigate } from "react-router-dom";
@@ -140,6 +140,7 @@ export const LandlordRegistration = () => {
               <div className="city-input">
                 <label>Select City : </label>
                 <select onChange={handleChange} name="City_ID">
+                <option>---- Select City ----</option>
                   <option value="6595909edeacfb00cc802dcd" label="Mumbai">
                     Mumbai
                   </option>
